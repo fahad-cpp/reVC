@@ -381,6 +381,7 @@ CGameLogic::RestorePlayerStuffDuringResurrection(CPlayerPed *pPlayerPed, CVector
 	pPlayerPed->bRemoveFromWorld = false;
 	pPlayerPed->ClearWeaponTarget();
 	pPlayerPed->SetInitialState();
+	pPlayerInfo->MakeInvincible(pPlayerInfo->m_isInvincible);
 	CCarCtrl::ClearInterestingVehicleList();
 	pPlayerPed->Teleport(pos + CVector(0.0f, 0.0f, 1.0f));
 	pPlayerPed->SetMoveSpeed(0.0f, 0.0f, 0.0f);

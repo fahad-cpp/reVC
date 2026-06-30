@@ -52,6 +52,7 @@ CPhoneInfo::Update(void)
 	CPlayerInfo *playerInfo = &CWorld::Players[CWorld::PlayerInFocus];
 	if (bDisplayingPhoneMessage && CTimer::GetTimeInMilliseconds() > PhoneEnableControlsTimer) {
 		playerInfo->MakePlayerSafe(false);
+		playerInfo->MakeInvincible(playerInfo->m_isInvincible);
 		TheCamera.SetWideScreenOff();
 		pPhoneDisplayingMessages = nil;
 		bDisplayingPhoneMessage = false;

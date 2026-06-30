@@ -269,6 +269,7 @@ CCutsceneMgr::FinishCutscene()
 
 	FindPlayerPed()->bIsVisible = true;
 	CWorld::Players[CWorld::PlayerInFocus].MakePlayerSafe(false);
+	CWorld::Players[CWorld::PlayerInFocus].MakeInvincible(CWorld::Players[CWorld::PlayerInFocus].m_isInvincible);
 }
 
 void
@@ -456,6 +457,7 @@ CCutsceneMgr::DeleteCutsceneData(void)
 	FindPlayerPed()->bIsVisible = true;
 	CPad::GetPad(0)->SetEnablePlayerControls(PLAYERCONTROL_CUTSCENE);
 	CWorld::Players[CWorld::PlayerInFocus].MakePlayerSafe(false);
+	CWorld::Players[CWorld::PlayerInFocus].MakeInvincible(CWorld::Players[CWorld::PlayerInFocus].m_isInvincible);
 
 	if (CGeneral::faststricmp(ms_cutsceneName, "finale")) {
 		DMAudio.StopCutSceneMusic();

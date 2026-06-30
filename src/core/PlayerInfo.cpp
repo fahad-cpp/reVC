@@ -841,7 +841,30 @@ CPlayerInfo::MakePlayerSafe(bool toggle)
 		CReplay::EnableReplays();
 	}
 }
-
+void 
+CPlayerInfo::MakeInvincible(bool toggle){
+	if(toggle){
+		m_isInvincible = true;
+		m_pPed->bBulletProof = true;
+		m_pPed->bFireProof = true;
+		m_pPed->bCollisionProof = true;
+		m_pPed->bMeleeProof = true;
+		m_pPed->bOnlyDamagedByPlayer = true;
+		m_pPed->bExplosionProof = true;
+		m_pPed->m_bCanBeDamaged = false;
+		CWorld::SetAllCarsCanBeDamaged(false);
+	}else{
+		m_isInvincible = false;
+		m_pPed->bBulletProof = false;
+		m_pPed->bFireProof = false;
+		m_pPed->bCollisionProof = false;
+		m_pPed->bMeleeProof = false;
+		m_pPed->bOnlyDamagedByPlayer = false;
+		m_pPed->bExplosionProof = false;
+		m_pPed->m_bCanBeDamaged = true;
+		CWorld::SetAllCarsCanBeDamaged(true);
+	}
+}
 void
 CPlayerInfo::BlowUpRCBuggy(bool actually)
 {

@@ -83,6 +83,7 @@ public:
 	bool m_bGetOutOfJailFree;
 	bool m_bGetOutOfHospitalFree;
 	bool m_bDriveByAllowed;
+	bool m_isInvincible;
 	uint8 m_nBustedAudioStatus;
 	int16 m_nCurrentBustedAudio;
 #ifdef GTA_PC
@@ -91,6 +92,7 @@ public:
 #endif
 
 	void MakePlayerSafe(bool);
+	void MakeInvincible(bool);
 	const CVector &GetPos();
 	void Process(void);
 	void KillPlayer(void);
