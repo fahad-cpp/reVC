@@ -852,7 +852,6 @@ CPlayerInfo::MakeInvincible(bool toggle){
 		m_pPed->bOnlyDamagedByPlayer = true;
 		m_pPed->bExplosionProof = true;
 		m_pPed->m_bCanBeDamaged = false;
-		CWorld::SetAllCarsCanBeDamaged(false);
 	}else{
 		m_isInvincible = false;
 		m_pPed->bBulletProof = false;
@@ -862,7 +861,6 @@ CPlayerInfo::MakeInvincible(bool toggle){
 		m_pPed->bOnlyDamagedByPlayer = false;
 		m_pPed->bExplosionProof = false;
 		m_pPed->m_bCanBeDamaged = true;
-		CWorld::SetAllCarsCanBeDamaged(true);
 	}
 }
 void
