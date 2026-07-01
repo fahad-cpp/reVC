@@ -404,6 +404,7 @@ void CMissionCleanup::Process()
 	CWorld::Players[0].m_pPed->m_pWanted->m_bIgnoredByCops = false;
 	CWorld::Players[0].m_pPed->m_pWanted->m_bIgnoredByEveryone = false;
 	CWorld::Players[0].MakePlayerSafe(false);
+	CWorld::Players[0].MakeInvincible(CWorld::Players[0].m_isInvincible);
 	CWorld::Players[0].m_pPed->m_nFadeDrunkenness = 1;
 	CWorld::Players[0].m_pPed->m_nDrunkCountdown = 0;
 	CPad::GetPad(0)->SetDrunkInputDelay(0);

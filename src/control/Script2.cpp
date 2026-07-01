@@ -909,6 +909,7 @@ int8 CRunningScript::ProcessCommands400To499(int32 command)
 		CPlayerInfo* pPlayer = &CWorld::Players[ScriptParams[0]];
 		if (ScriptParams[1]){
 			pPlayer->MakePlayerSafe(false);
+			pPlayer->MakeInvincible(pPlayer->m_isInvincible);
 			if (strcmp(m_abScriptName, "serg1") == 0) // Four Iron
 				pPlayer->m_pPed->ClearFollowPath();
 		}else{

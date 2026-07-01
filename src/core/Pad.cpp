@@ -305,10 +305,12 @@ void HealthCheat()
 }
 
 void InvincibleCheat(){
+	bool& isInvincible = CWorld::Players[0].m_isInvincible;
+	CHud::SetHelpMessage(TheText.Get((isInvincible)?"CHEATOF":"CHEAT1"), true);
 	FindPlayerPed()->m_fArmour = CWorld::Players[0].m_nMaxArmour;
 	FindPlayerPed()->m_fHealth = CWorld::Players[0].m_nMaxHealth;
-	CWorld::Players[0].m_isInvincible = !CWorld::Players[0].m_isInvincible;
-	CWorld::Players[0].MakeInvincible(CWorld::Players[0].m_isInvincible);
+	isInvincible = !isInvincible;
+	CWorld::Players[0].MakeInvincible(isInvincible);
 }
 
 // TODO(Miami): this is HELLA different on mobile, although it mostly has debug oriented things like player exiting it's current car and enters spawned one etc.
