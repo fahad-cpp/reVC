@@ -693,6 +693,8 @@ void WeaponCheat2();
 void WeaponCheat3();
 void HealthCheat();
 void InvincibleCheat();
+void StopTimerCheat();
+void DamageProofCarCheat();
 void VehicleCheat(int model);
 void BlowUpCarsCheat();
 void ChangePlayerCheat();
@@ -956,6 +958,8 @@ DebugMenuPopulate(void)
 		DebugMenuAddCmd("Cheats", "Money", MoneyCheat);
 		DebugMenuAddCmd("Cheats", "Health", HealthCheat);
 		DebugMenuAddCmd("Cheats", "Invincible", InvincibleCheat);
+		DebugMenuAddCmd("Cheats", "Stop Timer", StopTimerCheat);
+		DebugMenuAddCmd("Cheats", "Damage Proof Car", DamageProofCarCheat);
 		DebugMenuAddCmd("Cheats", "Wanted level up", WantedLevelUpCheat);
 		DebugMenuAddCmd("Cheats", "Wanted level down", WantedLevelDownCheat);
 		DebugMenuAddCmd("Cheats", "Tank", []() { VehicleCheat(MI_TAXI); });

@@ -278,6 +278,7 @@ public:
 	CStoredCollPoly m_aCollPolys[2];     // poly which is under front/rear part of car
 	float m_fSteerInput;
 	eVehicleType m_vehType;
+	bool m_bIsDamageProof;
 
 	static void *operator new(size_t) throw();
 	static void *operator new(size_t sz, int slot) throw();

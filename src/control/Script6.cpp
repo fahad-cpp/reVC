@@ -166,6 +166,9 @@ int8 CRunningScript::ProcessCommands1000To1099(int32 command)
 		pVehicle->bCanBeDamaged = ScriptParams[1] != 0;
 		if (!ScriptParams[1])
 			pVehicle->ExtinguishCarFire();
+		if(pVehicle->m_bIsDamageProof){
+			pVehicle->bCanBeDamaged = false;
+		}
 		return 0;
 	}
 	//case COMMAND_MAKE_PLAYER_UNSAFE:

@@ -11,6 +11,7 @@
 #endif
 #endif
 
+#include "User.h"
 #include "Pad.h"
 #include "ControllerConfig.h"
 #include "Timer.h"
@@ -312,7 +313,20 @@ void InvincibleCheat(){
 	isInvincible = !isInvincible;
 	CWorld::Players[0].MakeInvincible(isInvincible);
 }
+void StopTimerCheat(){
+	bool& timerDisabled = CUserDisplay::OnscnTimer.m_bDisabled;
+	CHud::SetHelpMessage(TheText.Get((timerDisabled)?"CHEATOF":"CHEAT1"), true);
+	timerDisabled = !timerDisabled;
+}
+void DamageProofCarCheat(){
+	CVehicle* veh = FindPlayerVehicle();
+	if(!veh)return;
+	bool& isDamageProof = veh->m_bIsDamageProof;
+	CHud::SetHelpMessage(TheText.Get((veh->m_bIsDamageProof)?"CHEATOF":"CHEAT1"), true);
+	isDamageProof = !isDamageProof;
+	veh->bCanBeDamaged = !isDamageProof;
 
+}
 // TODO(Miami): this is HELLA different on mobile, although it mostly has debug oriented things like player exiting it's current car and enters spawned one etc.
 void VehicleCheat(int model)
 {

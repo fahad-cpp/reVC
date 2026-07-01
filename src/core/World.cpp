@@ -1620,7 +1620,12 @@ CWorld::SetAllCarsCanBeDamaged(bool toggle)
 	int poolSize = CPools::GetVehiclePool()->GetSize();
 	for(int poolIndex = 0; poolIndex < poolSize; poolIndex++) {
 		CVehicle *veh = CPools::GetVehiclePool()->GetSlot(poolIndex);
-		if(veh) veh->bCanBeDamaged = toggle;
+		if(veh){
+			veh->bCanBeDamaged = toggle;
+			if(veh->m_bIsDamageProof){
+				veh->bCanBeDamaged = false;
+			}
+		}	
 	}
 }
 
